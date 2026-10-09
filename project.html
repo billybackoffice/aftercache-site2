@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mortal Coil: Autonoetic — AFTERCACHE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f4ede4;
+      --muted: rgba(244, 237, 228, 0.7);
+      --ink: #0b0b0a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: #0b0b0a;
+      color: var(--cream);
+      font-family: "DM Mono", monospace;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .scrim {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(6,4,3,0.55) 0%,
+        rgba(6,4,3,0.75) 40%,
+        rgba(6,4,3,0.92) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 5;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 5vw 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .back {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+    .back:hover { color: var(--cream); }
+
+    .tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.35s forwards;
+    }
+
+    h1 {
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: clamp(40px, 9vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    /* Animated title underline */
+    h1 span {
+      display: inline-block;
+      position: relative;
+    }
+    h1 span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 0;
+      height: 2px;
+      background: var(--cream);
+      animation: underline 1.2s ease 1.2s forwards;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .description p {
+      margin-bottom: 18px;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.9s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 24px;
+      font-size: 12px;
+      font-family: "DM Mono", monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--cream);
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .btn-primary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(244, 237, 228, 0.35);
+    }
+    .btn-ghost:hover {
+      border-color: var(--cream);
+      background: rgba(244, 237, 228, 0.08);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes underline {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        padding-top: 60px;
+      }
+      .actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Background image – name this one snake.jpg -->
+    <img class="bg" src="snake.jpg" alt="" aria-hidden="true">
+    <div class="scrim"></div>
+
+    <div class="content">
+      <a href="index.html" class="back">← Back</a>
+
+      <div class="tag">AC / 001 · Released 7 Oct 2026</div>
+
+      <h1><span>Mortal Coil:</span><br>Autonoetic</h1>
+
+      <div class="description">
+        <p>The songs on this project were created anywhere from two to five years ago. Some were finished, some were never fully realized, and some are simply ideas that existed for a moment in time before life moved on.</p>
+
+        <p>I know these songs aren’t perfect. Some of them probably don’t sound the way I would make music today. But that’s exactly why they mean something to me. Each one represents a period, an idea, or a version of myself that played a role in shaping who I am now.</p>
+
+        <p>Think of this project as me clearing the room.</p>
+
+        <p>I'm putting these old songs out into the world so I can make space for everything that's coming next. They're pieces of an older version of me, and releasing them feels like closing a chapter without pretending it never happened.</p>
+
+        <p>This isn't necessarily where I'm going.<br>
+        It's where I've been.<br>
+        And now, I'm ready to make room for what's next.</p>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://m.soundcloud.com/billychannels/sets/mortal-coil-autonoetic" target="_blank" rel="noopener">
+          Listen more
+        </a>
+        <a class="btn btn-ghost" href="https://bandcamp.com" target="_blank" rel="noopener">
+          Buy EP — $10
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
